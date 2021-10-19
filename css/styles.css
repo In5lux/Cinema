@@ -209,9 +209,14 @@ option{
 }
 
 .scheme path.booked, .scheme path.booked:hover{
-    fill: rgba(255, 255, 255, 0.05);
+    fill: rgb(172, 172, 172);
     cursor:not-allowed;
 }
+
+.scheme .legend-icon:hover path{    
+    cursor:default;
+}
+
 
 .legend{
     display: flex;
@@ -234,7 +239,7 @@ option{
 
 
 .scheme path.active, .scheme path.active:hover{
-    fill: #FF8C00;    
+    fill: #ff8c00ce;    
 }
 
 .legend svg{
@@ -274,6 +279,15 @@ option{
     line-height: 21px;    
 }
 
+.note{
+    display: inline-block;
+    padding: 5px;
+    background-color: bisque;
+    color: brown;
+    border-radius: 5px;
+    border: 1px solid brown;
+    position: fixed;          
+}
 
 @media (max-width: 1200px){
     .container{
@@ -402,6 +416,19 @@ option{
     .legend-label svg{
         width: 25px;
         height: 20px;
+    }
+
+    .session-month {
+        font-size: 16px;
+        line-height: 18px;
+    } 
+    .session-day {
+        font-size: 26px;        
+        line-height: 30px;
+    }
+    .session-week{
+        font-size: 16px;
+        line-height: 18px;
     }
 
 }
