@@ -374,6 +374,9 @@ option{
         margin-right: auto;
         margin-top: 40px;
     }
+    .note{
+        font-size: 10px;
+    }
     
 }
 @media (max-width: 500px){

@@ -9,9 +9,10 @@ let cost = 800;
 let totalPrice = 0;
 
 schemeSvg.addEventListener('click',evt=>{
-    if(!evt.target.classList.contains('booked')&&!evt.target.classList.contains('light')) {
-        !evt.target.classList.contains('active')?totalPrice+=cost:totalPrice-=cost;
-        evt.target.classList.toggle("active");                
+    if(!evt.target.classList.contains('scheme-svg')&&!evt.target.classList.contains('booked')&&!evt.target.classList.contains('light')) {        
+        evt.target.classList.toggle('active');
+        console.log(evt.target);        
+        totalPrice=(document.querySelectorAll('.active').length-1)*cost;                
     }
     
     totalPriceTag.textContent=totalPrice;    
@@ -22,9 +23,9 @@ menuButton.addEventListener('click', ()=>{
 });
 
 sits.forEach(elem=>elem.addEventListener('mouseover', evt=>{    
-    note.style.display='inline-block';
+    note.style.display='inline-block';   
     note.textContent=`${evt.target.dataset.title}`;
     note.style.top = `${evt.target.getBoundingClientRect().top+35}px`;
-    note.style.left = `${evt.target.getBoundingClientRect().left}px`;    
+    note.style.left = `${evt.target.getBoundingClientRect().left-40}px`;    
     evt.target.addEventListener('mouseout', ()=>note.style.display='none');
 }));
